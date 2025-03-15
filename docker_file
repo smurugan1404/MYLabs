@@ -1,2 +1,34 @@
 #Learning All Docker Comments
+
+
   
+[ec2-user@ip-172-31-2-14 git]$ git init
+Reinitialized existing Git repository in /home/ec2-user/git/.git/
+
+c2-user@ip-172-31-2-14 git]$ git log
+commit 0f77055f6d16594eb651f40d9248b551a897c (HEAD -> master)
+Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
+Date:   Sat Mar 15 12:04:01 2025 +0000
+    add 2 sample file
+
+[ec2-user@ip-172-31-2-14 git]$ git show 0f77055f6d1fef6594eb651f40d9248b551a897c
+commit 0f77055f6d1fef6594eb651f40d9248b551a897c (HEAD -> master)
+Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
+Date:   Sat Mar 15 12:04:01 2025 +0000
+
+    add 2 sample file
+
+diff --git a/sample.txt b/sample.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/sample1.txt b/sample1.txt
+new file mode 100644
+index 0000000..e69de29
+[ec2-user@ip-172-31-2-14 git]$
+
+[ec2-user@ip-172-31-2-14 git]$ git commit -m "Draft version" sample.txt sample1.txt
+On branch master
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-2-14 git]$
+
+[ec2-user@ip-172-31-2-14 git]$ git add .
