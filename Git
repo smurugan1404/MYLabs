@@ -135,3 +135,20 @@ Deleted branch MyLabs2025 (was 5c80d04).
 [root@ip-172-31-4-1 MyLabs999]# git rebase main
 Current branch main is up to date.
 
+15. Git Push
+[root@ip-172-31-4-1 MyLabs999]# git push https://github.com/smurugan1404/MyLabs999.git main
+Username for 'https://github.com': smurugan1404
+Password for 'https://smurugan1404@github.com':
+To https://github.com/smurugan1404/MyLabs999.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/smurugan1404/MyLabs999.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+Reference:
+https://docs.github.com/en/get-started/git-basics/about-remote-repositories#cloning-with-https-urls
+
