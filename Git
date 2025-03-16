@@ -22,6 +22,16 @@ Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
 Date:   Sat Mar 15 12:04:01 2025 +0000
     add 2 sample file
 
+[root@ip-172-31-4-1 MyLabs999]# git log --oneline
+5c80d04 (HEAD -> MyLabs2025, origin/main, origin/HEAD, main) Update Git
+31d2308 Docker
+de7eefa Update Git
+b2e65f9 Update and rename Git_file
+6c00ece Update docker_file
+225f3c3 Create README.md
+1b53b1a Create docker_file
+
+
 5. Show command of Git
 [ec2-user@ip-172-31-2-14 git]$ git show 0f77055f6d1fef6594eb651f40d9248b551a897c
 commit 0f77055f6d1fef6594eb651f40d9248b551a897c (HEAD -> master)
@@ -42,6 +52,14 @@ On branch master
 nothing to commit, working tree clean
 [ec2-user@ip-172-31-2-14 git]$
 
+[root@ip-172-31-4-1 MyLabs999]# git commit -m"latest changes" .
+[main bcdb265] latest changes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename Docker => Docker.md (100%)
+ rename Git => Git.md (100%)
+[root@ip-172-31-4-1 MyLabs999]#
+
+
 7.Git Add to repository
 [ec2-user@ip-172-31-2-14 git]$ git add .
 
@@ -49,5 +67,71 @@ nothing to commit, working tree clean
 [root@ip-172-31-4-1 git]# git status
 On branch master
 No commits yet
-nothing to commit (create/copy files and use "git add" to track)
+Nothing to commit (create/copy files and use "git add" to track)
+
+9. Git Clone
+[root@ip-172-31-4-1 .ssh]# git clone git@github.com:smurugan1404/MyLabs999.git
+Cloning into 'MyLabs999'...
+Warning: Permanently added the ECDSA host key for IP address '140.82.113.3' to the list of known hosts.
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 21 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (21/21), 7.42 KiB | 7.42 MiB/s, done.
+Resolving deltas: 100% (3/3), done.
+[root@ip-172-31-4-1 .ssh]#
+
+Reference Docs:
+https://medium.com/@qylong2021/clone-organization-owned-private-repository-on-aws-ec2-instances-fb712dbf03ad
+
+10. Configure Git username and email address
+[root@ip-172-31-4-1 MyLabs999]# git config --global user.name "Senthil Murugan Thiyagarajan"
+[root@ip-172-31-4-1 MyLabs999]# git config --global user.email "sthiyagarajan.gcs23@gmail.com"
+[root@ip-172-31-4-1 MyLabs999]# cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:smurugan1404/MyLabs999.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+        remote = origin
+        merge = refs/heads/main
+[root@ip-172-31-4-1 MyLabs999]#
+
+11. Git branch & Checkout command 
+[root@ip-172-31-4-1 MyLabs999]# git branch
+* main
+[root@ip-172-31-4-1 MyLabs999]# git branch MyLabs2025
+[root@ip-172-31-4-1 MyLabs999]# git branch
+  MyLabs2025
+* main
+[root@ip-172-31-4-1 MyLabs999]# git checkout MyLabs2025
+Switched to branch 'MyLabs2025'
+[root@ip-172-31-4-1 MyLabs999]# git status
+On branch MyLabs2025
+nothing to commit, working tree clean
+[root@ip-172-31-4-1 MyLabs999]#
+
+[root@ip-172-31-4-1 MyLabs999]# git checkout -b main
+fatal: a branch named 'main' already exists
+
+
+12. Git merge (branch level like DEV to Merge with QA)
+[root@ip-172-31-4-1 MyLabs999]# git merge MyLabs2025
+Already up to date.
+[root@ip-172-31-4-1 MyLabs999]# git merge main
+Already up to date.
+
+13. Git Delete command
+[root@ip-172-31-4-1 MyLabs999]# git branch -D MyLabs2025
+Deleted branch MyLabs2025 (was 5c80d04).
+[root@ip-172-31-4-1 MyLabs999]# git branch
+* main
+
+14. Git rebase command (adding files to main to Other branches) --like merge
+[root@ip-172-31-4-1 MyLabs999]# git rebase main
+Current branch main is up to date.
 
