@@ -1,6 +1,4 @@
-#Learning All Docker Comments
-
-
+#Learning All Git 
   
 [ec2-user@ip-172-31-2-14 git]$ git init
 Reinitialized existing Git repository in /home/ec2-user/git/.git/
