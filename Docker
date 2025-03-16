@@ -1,0 +1,15 @@
+Dokcer Instructions:-
+
+1. Installation of Docker
+[root@ip-172-31-4-1 docker]# yum install docker -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                            | 3.6 kB  00:00:00
+Package docker-25.0.8-1.amzn2.0.1.x86_64 already installed and latest version
+Nothing to do
+[root@ip-172-31-4-1 docker]#
+
+2. Checking the version of Docker
+[root@ip-172-31-4-1 docker]# docker --version
+Docker version 25.0.8, build 0bab007
+
+
