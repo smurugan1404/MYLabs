@@ -1,14 +1,28 @@
 #Learning All Git 
-  
+
+1. Installation of git on AWS Linux machine
+[root@ip-172-31-4-1 git]# yum install git
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                            | 3.6 kB  00:00:00
+Resolving Dependencies
+--> Running transaction check
+
+2. Checking the version of Git
+[root@ip-172-31-4-1 git]# git --version
+git version 2.47.1
+
+3. Initializing the Git
 [ec2-user@ip-172-31-2-14 git]$ git init
 Reinitialized existing Git repository in /home/ec2-user/git/.git/
 
+4. Checking the Git logs
 c2-user@ip-172-31-2-14 git]$ git log
 commit 0f77055f6d16594eb651f40d9248b551a897c (HEAD -> master)
 Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
 Date:   Sat Mar 15 12:04:01 2025 +0000
     add 2 sample file
 
+5. Show command of Git
 [ec2-user@ip-172-31-2-14 git]$ git show 0f77055f6d1fef6594eb651f40d9248b551a897c
 commit 0f77055f6d1fef6594eb651f40d9248b551a897c (HEAD -> master)
 Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
@@ -24,9 +38,11 @@ new file mode 100644
 index 0000000..e69de29
 [ec2-user@ip-172-31-2-14 git]$
 
+6. Git Commit command
 [ec2-user@ip-172-31-2-14 git]$ git commit -m "Draft version" sample.txt sample1.txt
 On branch master
 nothing to commit, working tree clean
 [ec2-user@ip-172-31-2-14 git]$
 
+7.Git Add to repository
 [ec2-user@ip-172-31-2-14 git]$ git add .
