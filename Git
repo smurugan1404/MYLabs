@@ -148,6 +148,11 @@ hint: the same ref. If you want to integrate the remote changes, use
 hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
+[root@ip-172-31-4-1 MyLabs999]# git pull origin main
+From github.com:smurugan1404/MyLabs999
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+[root@ip-172-31-4-1 MyLabs999]#
 
 Reference:
 https://docs.github.com/en/get-started/git-basics/about-remote-repositories#cloning-with-https-urls
