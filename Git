@@ -27,9 +27,7 @@ Date:   Sat Mar 15 12:04:01 2025 +0000
 commit 0f77055f6d1fef6594eb651f40d9248b551a897c (HEAD -> master)
 Author: EC2 Default User <ec2-user@ip-172-31-2-14.ec2.internal>
 Date:   Sat Mar 15 12:04:01 2025 +0000
-
     add 2 sample file
-
 diff --git a/sample.txt b/sample.txt
 new file mode 100644
 index 0000000..e69de29
@@ -46,3 +44,10 @@ nothing to commit, working tree clean
 
 7.Git Add to repository
 [ec2-user@ip-172-31-2-14 git]$ git add .
+
+8. Git status command
+[root@ip-172-31-4-1 git]# git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+
