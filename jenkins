@@ -1,0 +1,10 @@
+yum install jenkins
+yum remove jenkins
+ systemctl status jenkins
+systemctl start jenkins
+
+Important steps:
+Java is the prerequisite.
+Compatible version of JDK 17 or above
+
+Note:
