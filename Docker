@@ -1,16 +1,10 @@
-Dokcer Instructions:-
+Docker Instructions:-
 *********************
 1. Installation of Docker
-[root@ip-172-31-4-1 docker]# yum install docker -y
-Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-amzn2-core                                                                                                                                                            | 3.6 kB  00:00:00
-Package docker-25.0.8-1.amzn2.0.1.x86_64 already installed and latest version
-Nothing to do
-[root@ip-172-31-4-1 docker]#
+yum install docker -y
 
 2. Checking the version of Docker
-[root@ip-172-31-4-1 docker]# docker --version
-Docker version 25.0.8, build 0bab007
+docker --version
 
 3. Repository Information available in below location
 [root@ip-172-31-4-1 ~]# cd /etc/yum.repos.d/
@@ -20,43 +14,16 @@ total 8
 -rw-r--r-- 1 root root 2150 Mar  5 00:20 amzn2-extras.repo
 
 4. Start and Staus of Docker 
-[root@ip-172-31-4-1 docker]# sudo systemctl start docker
-[root@ip-172-31-4-1 docker]# sudo systemctl status docker
-[root@ip-172-31-4-1 docker]# sudo systemctl stop docker
-[root@ip-172-31-4-1 docker]# sudo systemctl restart docker
-● docker.service - Docker Application Container Engine
-   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
-   Active: active (running) since Mon 2025-03-17 11:43:27 UTC; 36s ago
-     Docs: https://docs.docker.com
-  Process: 3761 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
-  Process: 3759 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
- Main PID: 3764 (dockerd)
-    Tasks: 7
-   Memory: 107.1M
-   CGroup: /system.slice/docker.service
-           └─3764 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=32768:65536
-Mar 17 11:43:25 ip-172-31-4-1.ec2.internal systemd[1]: Starting Docker Application Container Engine...
-Mar 17 11:43:26 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:26.569710521Z" level=info msg="Starting up"
-Mar 17 11:43:26 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:26.806593495Z" level=info msg="Loading containers: start."
-Mar 17 11:43:27 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:27.043251529Z" level=info msg="Loading containers: done."
-Mar 17 11:43:27 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:27.084918891Z" level=info msg="Docker daemon" commit=71907ca containerd-snapshotter=false storage-driver=overlay2 version=25.0.8
-Mar 17 11:43:27 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:27.088231481Z" level=info msg="Daemon has completed initialization"
-Mar 17 11:43:27 ip-172-31-4-1.ec2.internal dockerd[3764]: time="2025-03-17T11:43:27.155619878Z" level=info msg="API listen on /run/docker.sock"
-Mar 17 11:43:27 ip-172-31-4-1.ec2.internal systemd[1]: Started Docker Application Container Engine.
+sudo systemctl start docker
+sudo systemctl status docker
+sudo systemctl stop docker
+sudo systemctl restart docker
 
 5. Run the Docker Container
-[root@ip-172-31-4-1 docker]# docker container run nginx
-Unable to find image 'nginx:latest' locally
-latest: Pulling from library/nginx
-7cf63256a31a: Pull complete 
+docker container run nginx
+docker container run -d --name mynginx1.0  nginx
+docker run postgres:9.6
 
-[root@ip-172-31-4-1 ~]# docker container run -d --name mynginx1.0  nginx
-34c06e5e891ded84235cc50de7da3d1be87e05e36c97fc401fdc0283f5a6e78b
-[root@ip-172-31-4-1 ~]# docker ps -a
-CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
-34c06e5e891d   nginx     "/docker-entrypoint.…"   5 seconds ago    Up 5 seconds                80/tcp    mynginx1.0
-2f8e4dfabb5b   nginx     "/docker-entrypoint.…"   13 minutes ago   Exited (0) 13 minutes ago             crazy_franklin
-[root@ip-172-31-4-1 ~]#
 
 6. Docker list command
 [root@ip-172-31-4-1 ~]# docker ps -a
@@ -139,4 +106,5 @@ ubuntu         20.04     6013ae1a63c2   5 months ago    72.8MB
 
 Reference:
 https://stackoverflow.com/questions/51857634/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docke
+https://medium.com/@srijaanaparthy/step-by-step-guide-to-install-docker-on-ubuntu-in-aws-a39746e5a63d (how to start docker)
 
