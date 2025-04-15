@@ -1,5 +1,5 @@
 Dokcer Instructions:-
-
+*********************
 1. Installation of Docker
 [root@ip-172-31-4-1 docker]# yum install docker -y
 Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
@@ -57,9 +57,6 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS       
 34c06e5e891d   nginx     "/docker-entrypoint.…"   5 seconds ago    Up 5 seconds                80/tcp    mynginx1.0
 2f8e4dfabb5b   nginx     "/docker-entrypoint.…"   13 minutes ago   Exited (0) 13 minutes ago             crazy_franklin
 [root@ip-172-31-4-1 ~]#
-
-
-
 
 6. Docker list command
 [root@ip-172-31-4-1 ~]# docker ps -a
