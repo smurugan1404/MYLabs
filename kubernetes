@@ -1,1 +1,1 @@
-
+kubectl runn testpod --image=nginx
