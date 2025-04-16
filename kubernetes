@@ -1,1 +1,18 @@
 kubectl runn testpod --image=nginx
+kubectl get pods
+kubectl get deploy
+kubectl delete deploy <container_name>
+crictl ps
+kubectl describe pods <<podsname>>
+kubectl get pods -o wide
+kubectl api-resources
+kubectl apply -f pod.yaml
+
+Study
+Docker compose
+Kubernetes manifest files
+
+
+Reference:
+https://kubernetes.io/docs/concepts/workloads/pods/
+https://docs.docker.com
