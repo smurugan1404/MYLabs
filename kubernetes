@@ -1,12 +1,61 @@
-kubectl runn testpod --image=nginx
-kubectl get pods
-kubectl get deploy
-kubectl delete deploy <container_name>
-crictl ps
-kubectl describe pods <<podsname>>
-kubectl get pods -o wide
-kubectl api-resources
-kubectl apply -f pod.yaml
+ubuntu@ip-172-31-9-99:~$ kubectl describe pod nginx
+Name:             nginx
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             ip-172-31-13-77/172.31.13.77
+Start Time:       Thu, 17 Apr 2025 12:47:45 +0000
+Labels:           run=nginx
+Annotations:      cni.projectcalico.org/containerID: 878cfcce504a90713aa7325a6cd344cbef51755363a87dc14d69b8ba1ac3d88a
+                  cni.projectcalico.org/podIP: 192.168.31.1/32
+                  cni.projectcalico.org/podIPs: 192.168.31.1/32
+Status:           Pending
+IP:               192.168.31.1
+IPs:
+  IP:  192.168.31.1
+Containers:
+  nginx:
+    Container ID:
+    Image:          nginx:1.0
+    Image ID:
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-p2q2v (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-p2q2v:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  22m                default-scheduler  Successfully assigned default/nginx to ip-172-31-13-77
+  Normal   Pulling    20m (x4 over 22m)  kubelet            Pulling image "nginx:1.0"
+  Warning  Failed     20m (x4 over 22m)  kubelet            Failed to pull image "nginx:1.0": reading manifest 1.0 in quay.io/nginx: StatusCode: 404, <!doctype html>
+<html lang=en>
+<title>404 Not Foun...
+  Warning  Failed   20m (x4 over 22m)  kubelet  Error: ErrImagePull
+  Warning  Failed   20m (x6 over 22m)  kubelet  Error: ImagePullBackOff
+  Normal   BackOff  2m (x87 over 22m)  kubelet  Back-off pulling image "nginx:1.0"
 
 Study
 Docker compose
